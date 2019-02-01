@@ -1,0 +1,24 @@
+body {
+    background-image: url("../img/bg1.png");
+    /* opacity: 0.6; */
+}
+.container {
+    background-color: floralwhite;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    /* width: 100%; */
+    /* background-color: aliceblue; */
+}
+
+.navbar .nav-item {
+    font-size: 14px;
+}
+a{
+    color: gray;
+}
+.img-thumbnail {
+    height: 75px;
+    width: 75px;
+}

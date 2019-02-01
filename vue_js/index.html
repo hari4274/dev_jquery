@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS Samples Exp</title>
+
+    <!-- CSS Sources -->
+    <link rel="stylesheet" href="../jquery/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
+    <!-- JS Sources -->
+    <script src="../jquery/static/js/jquery.min.js"></script>
+    <script src="../jquery/static/js/bootstrap.min.js"></script>
+    <!-- <script src="../jquery/static/js/main.js"></script> -->
+    <!-- Vue Js -dev -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <style type="text/css">
+        .table td:first-child {
+            width: 10%;
+        }
+        .table td, .table th {
+            padding: 2px;
+        }
+    </style>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin:24px 0;">
+                <img src="https://vuejs.org/images/logo.png" class="navbar-brand" style="height: 45px; width: 45px;"> Vue JS</i>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navb">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jquery/">JQuery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vue_js/">Vue JS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="javascript:void(0)">Disabled</a>
+                    </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="button">Search</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="page-header text-center">
+                <h3>VUE JS Examples</h3>
+            </div>
+            <table class="table table-striped" id="TblProjectView">
+                <tr><th colspan="2" class="text-center">Index</th></tr>
+                <tr><td>S.No</td><td>Example</td></tr>
+                <tr v-for="project in projects">
+                    <td>{{ project.id }}</td>
+                    <td><a v-bind:href="project.url">{{ project.text }}</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            var app4 = new Vue({
+                    el: '#TblProjectView',
+                    data: {
+                        projects: [
+                            { id:1, url: '../jquery/', text: 'JQuery' },
+                            { id:2, url: '../vue_js/', text: 'Vue JS' },
+                        ]
+                    }
+                })
+        </script>
+    
+</body>
+</html>
